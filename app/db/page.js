@@ -6,7 +6,7 @@ function DB() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("/api/prompt", { next: { revalidate: 60 } })
+fetch("/api/prompt", { cache: 'no-cache' })
       .then((res) => res.json())
       .then((data) => {
         setData(data);
